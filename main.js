@@ -25,7 +25,6 @@ for (let slot of slots) {
 
 /*----- functions -----*/
 function createBoard() {
-  newBoardSound.play()
   const board = [];
   for (let row = 0; row < boardHeight; row++) {
     const rowArray = [];
@@ -155,6 +154,7 @@ function checkDiagonal2(row, col) {
 }
 
 function resetGame() {
+  newBoardSound.play()
   currentPlayer = player1;
   board = createBoard();
   for (let slot of slots) {

@@ -2,9 +2,11 @@ body {
   margin: auto;
   display: flex;
   flex-direction: column;
-  background-color: black;
   height: 90svh;
-  width: 95svw;
+  width: 90svw;
+  background: linear-gradient(45deg, black, darkred);
+  background-size: 200% 300%;
+  animation: gradient-rotation 10s ease infinite;
 }
 
 h1 {
@@ -93,13 +95,6 @@ button {
   background-color: tomato;
 }
 
-
-body {
-  background: linear-gradient(45deg, black, darkred);
-  background-size: 200% 200%;
-  animation: gradient-rotation 10s ease infinite;
-}
-
 @keyframes gradient-rotation {
   0% {
     background-position: 0% 50%;
@@ -110,4 +105,23 @@ body {
   100% {
     background-position: 0% 50%;
   }
+}
+
+
+@media (max-width: 500px) {
+.slot {
+  width: 2em;
+  height: 2em;
+}
+#game-board {
+  position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    display: grid;
+    grid-template-columns: repeat(7, 2em);
+    grid-gap: 5px;
+    width: fit-content;
+    padding: 5px;
+}
 }
