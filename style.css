@@ -1,0 +1,113 @@
+body {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  height: 90svh;
+  width: 95svw;
+}
+
+h1 {
+  color: white;
+  align-self: center;
+}
+
+#game-board {
+  transform: rotate(90deg);
+  display: grid;
+  grid-template-columns: repeat(7, 60px); /* Adjust the number of columns as needed */
+  grid-gap: 5px; /* Adjust the gap between slots */
+  width: fit-content;
+  margin: auto;
+  padding: 5px; /* Add padding to the game board */
+}
+
+.slot {
+  margin: 0px;
+  width: 60px;
+  height: 60px;
+  border: 1px solid black;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: transform 0.3s, box-shadow 0.3s; /* Add transition properties */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); /* Add box shadow for the embossed effect */
+}
+
+.slot:hover {
+  transform: scale(1.05); /* Add slight scale on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Modify box shadow on hover */
+  z-index: 1;
+}
+
+.slot::before {
+  content: "";
+  width: 80%;
+  height: 80%;
+  background-color: inherit;
+  border-radius: 50%;
+}
+
+
+button {
+  display: block;
+  margin: 10px auto;
+}
+
+
+#winner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  color: white;
+  font-size: 48px;
+  text-align: center;
+}
+
+#winner {
+  
+}
+
+#reset-button {
+  z-index: 2;
+  background-color: coral;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#reset-button:hover {
+  background-color: tomato;
+}
+
+
+body {
+  background: linear-gradient(45deg, black, darkred);
+  background-size: 200% 200%;
+  animation: gradient-rotation 10s ease infinite;
+}
+
+@keyframes gradient-rotation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
