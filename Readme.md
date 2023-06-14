@@ -37,8 +37,8 @@ This project has been tested and verified to work on the latest versions of mode
 
 ## Credits
 
-This project is based on the Connect-4 game and was implemented by [Your Name]. The original Connect-4 game concept was created by Howard Wexler and Ned Strongin.
+This project is based on the Connect-4 game and was implemented by Zakariah. The original Connect-4 game concept was created by Howard Wexler and Ned Strongin.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the code for personal and commercial purposes.
+This project is available for a live demonstration here: https://rancor38.github.io/connect-4/
