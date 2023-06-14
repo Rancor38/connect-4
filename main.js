@@ -1,6 +1,9 @@
 /*----- audio -----*/
-const chip = new Audio('chip.wav');
-
+const chip1 = new Audio('chip1.wav');
+const chip2 = new Audio('chip2.wav');
+const chip3 = new Audio('chip3.wav');
+const gameOver = new Audio('game_over.wav');
+const newBoardSound = new Audio('new_game_sound.wav')
 
 /*----- constants -----*/
 const player1 = 'red';
@@ -22,6 +25,7 @@ for (let slot of slots) {
 
 /*----- functions -----*/
 function createBoard() {
+  newBoardSound.play()
   const board = [];
   for (let row = 0; row < boardHeight; row++) {
     const rowArray = [];
@@ -34,8 +38,10 @@ function createBoard() {
 }
 
 function handleSlotClick(event) {
-  chip.load()
-  chip.play()
+  chip1.load()
+  chip2.load()
+  chip3.load()
+  playRandomChipSound()
   const clickedSlot = event.target;
   const colIndex = Array.from(clickedSlot.parentNode.children).indexOf(clickedSlot);
 
@@ -57,6 +63,7 @@ function handleSlotClick(event) {
 
 function checkWin(row, col) {
   if (checkVertical(row, col) || checkHorizontal(row, col) || checkDiagonal(row, col)) {
+    gameOver.play()
     const winnerDiv = document.createElement('div');
     winnerDiv.id = 'winner';
     winnerDiv.textContent = currentPlayer.charAt(0).toUpperCase() + currentPlayer.slice(1) + ' wins!';
@@ -164,4 +171,10 @@ function resetGame() {
   if (resetButton) {
     resetButton.remove();
   }
+}
+
+function playRandomChipSound() {
+  const soundIndex = Math.floor(Math.random() * 3) + 1;
+  const sound = new Audio(`chip${soundIndex}.wav`);
+  sound.play();
 }
