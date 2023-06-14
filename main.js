@@ -1,3 +1,7 @@
+/*----- audio -----*/
+const chip = new Audio('chip.wav');
+
+
 /*----- constants -----*/
 const player1 = 'red';
 const player2 = 'blue';
@@ -30,6 +34,8 @@ function createBoard() {
 }
 
 function handleSlotClick(event) {
+  chip.load()
+  chip.play()
   const clickedSlot = event.target;
   const colIndex = Array.from(clickedSlot.parentNode.children).indexOf(clickedSlot);
 
